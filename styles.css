@@ -1,0 +1,266 @@
+/* ==========================================================================
+   🎨 MAIN SIDEBAR CONTAINER STYLES
+   ========================================================================== */
+
+:root {
+  --primary-color: #800020;
+  --secondary-color: #d45060;
+  --offwhite-color: #f3e6d5;
+  --lightest-color: #fff9f2;
+
+  --BG-color: #1f1f1f; /* ⚠️ SIDEBAR BACKGROUND COLOR (Dark Grey) */
+}
+
+#wc-mod-sidebar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 290px;
+  height: auto;
+  max-height: 95vh;
+  background: var(--BG-color);
+  color: var(--lightest-color);
+  border: 3px solid var(--primary-color);
+  border-radius: 8px;
+  z-index: 99999;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  transition: height 0.2s ease;
+}
+
+/* Minimized panel layout block dimensions */
+#wc-mod-sidebar.minimized {
+  height: 40px;
+  width: 290px;
+  overflow: hidden;
+}
+
+/* HEADER BAR (The click-and-drag handle area) */
+.wc-header {
+  background: var(--primary-color);
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  cursor: move;
+  user-select: none;
+}
+
+/* Tiny fold toggle button */
+.wc-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--lightest-color);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.wc-main-body {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(95vh - 40px);
+}
+
+.wc-section {
+  padding: 10px;
+  border-bottom: 1px solid #333; /* ⚠️ INDIVIDUAL SECTION DIVIDER LINES */
+}
+
+/* ==========================================================================
+   🎲 ICEBREAKER ELEMENT STYLES
+   ========================================================================== */
+.wc-ice-options-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+.wc-ice-choice-btn {
+  background: #3a3f50; /* ⚠️ SHUFFLED PROMPT BUTTON BACKGROUND */
+  color: #fff; /* ⚠️ SHUFFLED PROMPT BUTTON TEXT COLOR */
+  border: 1px solid #4b5366; /* ⚠️ SHUFFLED PROMPT BUTTON BORDER OUTLINE */
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: left;
+  line-height: 1.3;
+}
+/* Shuffled prompt hover transformation state */
+.wc-ice-choice-btn:hover {
+  background: #57606f;
+}
+
+/* ==========================================================================
+   ⏱️ TIMESTAMPER ENTRY FIELDS
+   ========================================================================== */
+.wc-ts-area {
+  width: 100%;
+  height: 65px;
+  background: #2f3542; /* ⚠️ TIMESTAMP LOG WINDOW BACKGROUND CONTAINER */
+  color: white; /* ⚠️ TIMESTAMP TEXT LOG CONTENT COLOR */
+  border: 1px solid #57606f; /* ⚠️ TIMESTAMP WINDOW BORDER OUTLINE */
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 11px;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding: 4px;
+}
+
+/* ==========================================================================
+   🗂️ TAB INTERFACE MENU NAVIGATION ELEMENTS
+   ========================================================================== */
+.wc-tabs {
+  display: flex;
+  background: #2a2a2a; /* ⚠️ BACKGROUND PANEL BAR BEHIND THE TABS */
+}
+.wc-tab-btn {
+  flex: 1;
+  padding: 6px;
+  background: none;
+  border: none;
+  color: var(
+    --offwhite-color
+  ); /* ⚠️ INACTIVE TAB MENU SELECTION FONT TEXT COLOR */
+  cursor: pointer;
+  font-size: 11px;
+}
+/* Highlighting rule applied only to your currently opened active tab window context */
+.wc-tab-btn.active {
+  background: #333; /* ⚠️ ACTIVE SELECTOR BACKGROUND SURFACE CONTAINER */
+  color: var(
+    --lightest-color
+  ); /* ⚠️ ACTIVE SELECTOR ACCENT TEXT HIGHLIGHT COLOR */
+  font-weight: bold;
+}
+
+/* ==========================================================================
+   📋 STAGE QUESTION QUEUE HUB TRACKER LAYOUT ROWS
+   ========================================================================== */
+.wc-queue-item {
+  background: #2f3542; /* ⚠️ QUESTION CONTAINER LAYER HOUSING CONTENT */
+  padding: 6px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  border-left: 3px solid var(--primary-color); /* ⚠️ ACCENT INDICATOR COLOR EDGE */
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   🚨 INJECTED CHAT ACTION INTERFACE SHORTCUT SELECTION WINDOWS
+   ========================================================================== */
+.wc-injected-btn {
+  background: var(
+    --primary-color
+  ); /* ⚠️ INJECTED CHAT ROW BUTTONS BACKGROUND ("W") */
+  color: var(--lightest-color); /* ⚠️ INJECTED CHAT BUTTON TEXTS LABEL COLOR */
+  border: none;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin-right: 4px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+}
+.wc-q-btn {
+  background: #ffa502; /* ⚠️ INJECTED QUESTION TICKER OVERLAY WINDOWS BACKGROUND ("?") */
+}
+
+/* Pure boundary border line rule used to mark severe word violations instantly */
+.wc-banned-msg {
+  border: 2px solid var(--primary-color) !important; /* ⚠️ CHAT VIOLATOR RECORD WRAPPER HIGHLIGHT BORDER */
+  background: rgba(
+    255,
+    71,
+    87,
+    0.1
+  ) !important; /* ⚠️ CHAT VIOLATOR LAYER BACKGROUND (Light Translucent Coral) */
+}
+
+/* Layout Alignment Grid */
+.wc-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 5px 0;
+}
+
+/* ⏱️ & 🎲 TOP ACTION UTILITY BUTTONS (Log Time & Generate Options) */
+.wc-action-btn {
+  background: var(--primary-color) !important;
+  border: 1px solid var(--secondary-color) !important;
+  color: var(--lightest-color) !important;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 11px;
+  width: 100%;
+  text-align: center;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.wc-action-btn:hover {
+  background: var(--secondary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+/* 🤖 & 🎉 BOTTOM GRID MACRO BUTTONS (Bot Triggers & Community Hype) */
+.wc-macro-btn {
+  background: #3a3f50 !important; /* 🌟 Lighter Slate Gray (Matches Icebreakers) */
+  border: 1px solid #4b5366 !important; /* Lighter Border outline */
+  color: #ffffff !important;
+  padding: 6px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.15s ease;
+}
+.wc-macro-btn:hover {
+  background: #57606f !important; /* Clean hover blend state */
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   ⚙️ DYNAMIC AFFILIATE INPUT FIELD STYLES
+   ========================================================================== */
+.wc-config-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #2a2a2a;
+  padding: 6px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #333;
+}
+.wc-config-input {
+  flex: 1;
+  background: #1f1f1f;
+  border: 1px solid #4b5366;
+  color: #ffffff;
+  padding: 4px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+.wc-config-input:focus {
+  border-color: var(--secondary-color);
+  outline: none;
+}
