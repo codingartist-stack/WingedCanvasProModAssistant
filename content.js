@@ -76,15 +76,15 @@ const COMMANDS = {
 
 const HYPE_MACROS = {
   '👋 Welcome Hype':
-    "🎨 Welcome to the stream! Grab your sketchbook, ask questions, and tell us what you're working on today? 🤓✨",
-  '✨ Art Hype':
-    '✨ WOW! Incredible linework and details! Absolute masterpiece vibes! 🔥🎨',
+    "🎨 Welcome to the stream! Grab your sketchbook, ask questions, and tell us what you're working on today! 🤓✨",
+  '✨ Joining Late?':
+    "✨ Joining late? Today's focus is [TOPIC]! Currently demoing [DEMO]. Say hi in chat 🔥🎨",
   '🙌 Team Hype':
-    '💖 Can we get some hype in the chat for our amazing instructors and mod team today? You guys are absolutely fantastic! 🎨✨',
-  '💬 Style Prompt':
-    "✨ Let's do a style check! How would you describe your unique art style in exactly THREE words? Drop them below! 👇🎨",
+    '💖 Huge shoutout to [STREAMER] for breaking down [DEMO] and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
+  '💬 Topic Struggles':
+    "✨ Today we're practicing [SKILL] with [STREAMER]! What's your biggest struggle when drawing this? Drop it below! 👇🎨",
   '🔥 Skill Prompt':
-    "🔥 Quick question for the chat: What is the absolute hardest part about drawing anatomy or hands for you right now? Let's talk about it! ✏️👀",
+    "🔥 Quick question for chat: What's your favorite part or go-to trick when drawing [SKILL]? Share your tips below! ✏️👀",
   '👀 Lurking':
     '👀 Enjoying from the shadows? We see you and appreciate the support! Happy sketching! 🎨✨',
   '⚠️ Tech Issue':
