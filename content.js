@@ -116,7 +116,7 @@ function initSidebar() {
   sidebar.innerHTML = `
     <div class="wc-header" id="wc-sidebar-header" style="display: flex; align-items: center; gap: 6px;">
       <img src="${chrome.runtime.getURL('images/winged-canvas-nerd-glasses.png')}" alt="Icon" style="height: 20px; object-fit: contain; pointer-events: none;">
-      <span id="wc-drag-title">Mod Helper v4.6</span>
+      <span id="wc-drag-title">Mod Helper v4.7</span>
       <button class="wc-toggle-btn" id="wc-toggle-minimize" style="margin-left: auto;">−</button>
     </div>
     
