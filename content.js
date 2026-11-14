@@ -78,13 +78,13 @@ const HYPE_MACROS = {
   '👋 Welcome Hype':
     "🎨 Welcome to the stream! Grab your sketchbook, ask questions, and tell us what you're working on today! 🤓✨",
   '✨ Joining Late?':
-    "✨ Joining late? Today's focus is [TOPIC]! Currently demoing [DEMO]. Say hi in chat 🔥🎨",
+    "✨ Joining late? Today's focus is TOPIC! Currently demoing DEMO. Say hi in chat 🔥🎨",
   '🙌 Team Hype':
-    '💖 Huge shoutout to [STREAMER] for breaking down [DEMO] and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
+    '💖 Huge shoutout to STREAMER for breaking down DEMO and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
   '💬 Topic Struggles':
-    "✨ Today we're practicing [SKILL] with [STREAMER]! What's your biggest struggle when drawing this? Drop it below! 👇🎨",
+    "✨ Today we're practicing SKILL with STREAMER! What's your biggest struggle when drawing this? Drop it below! 👇🎨",
   '🔥 Skill Prompt':
-    "🔥 Quick question for chat: What's your favorite part or go-to trick when drawing [SKILL]? Share your tips below! ✏️👀",
+    "🔥 Quick question for chat: What's your favorite part or go-to trick when drawing SKILL? Share your tips below! ✏️👀",
   '👀 Lurking':
     '👀 Enjoying from the shadows? We see you and appreciate the support! Happy sketching! 🎨✨',
   '⚠️ Tech Issue':
