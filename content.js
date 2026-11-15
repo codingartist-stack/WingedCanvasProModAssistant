@@ -89,6 +89,8 @@ const HYPE_MACROS = {
     '👀 Enjoying from the shadows? We see you and appreciate the support! Happy sketching! 🎨✨',
   '⚠️ Tech Issue':
     '⚠️ Art Nerds, hold fast! Our tech tools are throwing a drawing error. The stream canvas is loading, please hold! 🤖🎨',
+  '🎯 Feedback Prompt':
+    '🎯 If you could get instant feedback from STREAMER on your art right now, what element would you ask about? Drop it in chat! ✏️💬',
 };
 
 const BACKUP_SESSION_START = Date.now();
