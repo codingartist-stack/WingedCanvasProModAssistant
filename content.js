@@ -131,7 +131,7 @@ function initSidebar() {
         </div>
         <div class="wc-config-row" style="margin-bottom: 0;">
           <span style="font-size:11px; color:#aaa; width: 58px;">Topic:</span>
-          <input type="text" id="wc-input-topic" class="wc-config-input" placeholder="e.g. Anatomy, Lighting">
+          <input type="text" id="wc-input-topic" class="wc-config-input" placeholder="e.g. Anatomy, Color Theory, Design">
         </div>
       </div>
 
