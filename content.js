@@ -135,13 +135,20 @@ function initSidebar() {
       <button class="wc-toggle-btn" id="wc-toggle-minimize" style="margin-left: auto;">−</button>
     </div>
     
-    <div class="wc-main-body">
-      <!-- ⚙️ Moderator Profile Config Section -->
+    <!-- ⚙️ Moderator Profile & Stream Config Section -->
       <div class="wc-section">
-        <strong>⚙️ Mod Affiliate Configuration</strong>
+        <strong>⚙️ Stream & Mod Configuration</strong>
         <div class="wc-config-row" style="margin-top: 5px;">
-          <span style="font-size:11px; color:#aaa;">Your Name:</span>
+          <span style="font-size:11px; color:#aaa; width: 58px;">Your Name:</span>
           <input type="text" id="wc-input-mod-name" class="wc-config-input" placeholder="e.g. sarah, john, kelsey">
+        </div>
+        <div class="wc-config-row">
+          <span style="font-size:11px; color:#aaa; width: 58px;">Streamer:</span>
+          <input type="text" id="wc-input-streamer" class="wc-config-input" placeholder="e.g. Fei, Adam">
+        </div>
+        <div class="wc-config-row" style="margin-bottom: 0;">
+          <span style="font-size:11px; color:#aaa; width: 58px;">Topic:</span>
+          <input type="text" id="wc-input-topic" class="wc-config-input" placeholder="e.g. Anatomy, Lighting">
         </div>
       </div>
 
@@ -171,6 +178,7 @@ function initSidebar() {
       <!-- Categorized Command Vault -->
       <div class="wc-tabs">
         <button class="wc-tab-btn active" id="tab-gen">General</button>
+         <button class="wc-tab-btn" id="tab-hype">Chat Hype</button>
         <button class="wc-tab-btn" id="tab-inst">Resources</button>
         <button class="wc-tab-btn" id="tab-off">Programs</button>
       </div>
@@ -216,6 +224,22 @@ function initSidebar() {
       // Dynamically re-render the open tab view to apply label changes instantly
       const activeTab = document.querySelector('.wc-tab-btn.active');
       if (activeTab) activeTab.click();
+    });
+  }
+  // Streamer & Topic Storage Initialization
+  const streamerInput = document.getElementById('wc-input-streamer');
+  if (streamerInput) {
+    streamerInput.value = localStorage.getItem('wc_stream_streamer') || '';
+    streamerInput.addEventListener('input', () => {
+      localStorage.setItem('wc_stream_streamer', streamerInput.value.trim());
+    });
+  }
+
+  const topicInput = document.getElementById('wc-input-topic');
+  if (topicInput) {
+    topicInput.value = localStorage.getItem('wc_stream_topic') || '';
+    topicInput.addEventListener('input', () => {
+      localStorage.setItem('wc_stream_topic', topicInput.value.trim());
     });
   }
 
@@ -391,16 +415,33 @@ function captureLiveTimestamp() {
     localStorage.setItem('wc_saved_timestamps', updatedText);
   }
 }
-function sendToChatInput(text) {
-  let textToPaste = text;
+function formatMacroText(rawText) {
+  let finalText = rawText;
+  const savedStreamer = localStorage.getItem('wc_stream_streamer') || '';
+  const savedTopic = localStorage.getItem('wc_stream_topic') || '';
 
-  // DYNAMIC LOOKUP LAYER: Swaps out the baseline !skool trigger to paste the clean code command instead
+  if (savedStreamer) {
+    finalText = finalText.replace(/\bSTREAMER\b/g, savedStreamer);
+  }
+  if (savedTopic) {
+    finalText = finalText.replace(/\bTOPIC\b/g, savedTopic);
+  }
+
+  return finalText;
+}
+
+function sendToChatInput(text) {
+  // 1. Call the helper function right here to swap STREAMER and TOPIC
+  let textToPaste = formatMacroText(text);
+
+  // 2. Keep your existing !skool dynamic lookup layer
   if (textToPaste.startsWith('!skool')) {
     const currentProfileName =
       localStorage.getItem('wc_mod_profile_name') || '';
     textToPaste = `!skool${currentProfileName}`;
   }
 
+  // 3. Send the formatted text to the YouTube chat iframe
   try {
     chrome.runtime.sendMessage({ type: 'WC_INJECT_TEXT', text: textToPaste });
   } catch (err) {
