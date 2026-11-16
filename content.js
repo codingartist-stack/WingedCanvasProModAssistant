@@ -31,6 +31,7 @@ const COMMANDS = {
     '!critique',
     '!skool',
     '!bye',
+    '!device',
   ],
   resources: [
     '!anatomy',
@@ -215,6 +216,8 @@ function initSidebar() {
     streamerInput.value = localStorage.getItem('wc_stream_streamer') || '';
     streamerInput.addEventListener('input', () => {
       localStorage.setItem('wc_stream_streamer', streamerInput.value.trim());
+      const activeTab = document.querySelector('.wc-tab-btn.active');
+      if (activeTab) activeTab.click();
     });
   }
 
@@ -337,6 +340,9 @@ function switchTab(category, tabId) {
   cmdGrid.className = 'wc-btn-grid';
 
   const activeModName = localStorage.getItem('wc_mod_profile_name') || '';
+  const activeStreamerName = (localStorage.getItem('wc_stream_streamer') || '')
+    .toLowerCase()
+    .replace(/\s+/g, '');
 
   COMMANDS[category].forEach((cmd) => {
     const btn = document.createElement('button');
@@ -350,6 +356,16 @@ function switchTab(category, tabId) {
 
       btn.innerText = dynamicTrigger;
       btn.addEventListener('click', () => sendToChatInput(dynamicTrigger));
+    } else if (cmd === '!device') {
+      const dynamicDeviceTrigger =
+        activeStreamerName && activeStreamerName !== ''
+          ? `!device${activeStreamerName}`
+          : '!device';
+
+      btn.innerText = dynamicDeviceTrigger;
+      btn.addEventListener('click', () =>
+        sendToChatInput(dynamicDeviceTrigger),
+      );
     } else {
       btn.innerText = cmd;
       btn.addEventListener('click', () => sendToChatInput(cmd));
