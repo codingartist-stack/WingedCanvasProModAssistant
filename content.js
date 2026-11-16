@@ -19,23 +19,6 @@ const BANNED_WORDS = [
   'xxx',
 ];
 
-const ICEBREAKERS = [
-  'What drawing software are you using?',
-  'How would you describe your art style?',
-  "What's your favourite artist living or dead?",
-  'Favourite cartoon/anime character?',
-  'What song do you have on repeat while drawing?',
-  "What's everyone working on today? 🎨",
-  'What art struggles have you been dealing with this week?',
-  "Digital vs. Traditional: what's your weapon of choice today?",
-  "What's the hardest part about drawing hands for you?",
-  'Who is your absolute biggest art inspiration right now?',
-  'Drop your WIP status! Sketching, line art, or rendering? 👇',
-  "Are you drawing traditionally or digitally during today's stream?",
-  "What's one art goal you want to achieve by the end of this month? 📈",
-  'If you could get immediate feedback from an instructor right now, what element would you ask about?',
-];
-
 const COMMANDS = {
   general: [
     '!welcome',
@@ -468,19 +451,7 @@ function sendToChatInput(text) {
     console.error('Extension runtime message drop:', err);
   }
 }
-function generateIcebreakerOptions() {
-  const container = document.getElementById('wc-ice-options-container');
-  container.innerHTML = '';
-  const shuffled = [...ICEBREAKERS].sort(() => 0.5 - Math.random());
-  const selected = shuffled.slice(0, 3);
-  selected.forEach((promptText) => {
-    const btn = document.createElement('button');
-    btn.className = 'wc-ice-choice-btn';
-    btn.innerText = promptText;
-    btn.addEventListener('click', () => sendToChatInput(promptText));
-    container.appendChild(btn);
-  });
-}
+
 function runLiveChatIframeScanner() {
   setInterval(() => {
     const chatRows = document.querySelectorAll(
