@@ -40,15 +40,14 @@ const COMMANDS = {
   general: [
     '!welcome',
     '!polls',
-    '!challenge',
-    '!liveschedule',
-    '!bye',
     '!chatrules',
-    '!critique',
-    '!submissions',
     '!discord',
+    '!challenge',
+    '!critique',
     '!skool',
     '!socials',
+    '!liveschedule',
+    '!bye',
   ],
   resources: [
     '!anatomy',
@@ -149,17 +148,6 @@ function initSidebar() {
         </div>
       </div>
 
-      <!-- 3-Option Icebreaker Module -->
-      <div class="wc-section">
-        <strong>🎲 Icebreaker Shuffler</strong>
-        <div style="display:flex; gap: 5px; margin-top:5px;">
-          <button id="wc-btn-shuffle" class="wc-action-btn">Generate 3 Options</button>
-        </div>
-        <div id="wc-ice-options-container" class="wc-ice-options-vertical">
-          <span style="color:#aaa; font-size:11px; font-style:italic;">Click button to view options...</span>
-        </div>
-      </div>
-
       <!-- Question Tracker Queue -->
       <div class="wc-section" style="max-height: 120px; overflow-y: auto;">
         <strong>📋 Question Queue Tracker</strong>
@@ -230,9 +218,9 @@ function initSidebar() {
   document
     .getElementById('wc-btn-ts')
     .addEventListener('click', captureLiveTimestamp);
-  document
+  /*document
     .getElementById('wc-btn-shuffle')
-    .addEventListener('click', generateIcebreakerOptions);
+    .addEventListener('click', generateIcebreakerOptions); */
   document
     .getElementById('tab-gen')
     .addEventListener('click', () => switchTab('general', 'tab-gen'));
