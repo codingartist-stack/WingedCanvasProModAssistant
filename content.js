@@ -67,7 +67,7 @@ const HYPE_MACROS = {
   '✨ Joining Late?':
     "✨ Joining late? Today's focus is TOPIC! STREAMER is currently demoing DEMO. Say hi in chat 🔥🎨",
   '🙌 Team Hype':
-    '💖 Huge shoutout to STREAMER for breaking down DEMO and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
+    '💖 Huge shoutout to STREAMER for breaking down TOPIC and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
   '💬 Topic Struggles':
     "✨ Today we're practicing SKILL with STREAMER! What's your biggest struggle when drawing this? Drop it below! 👇🎨",
   '🔥 Skill Prompt':
@@ -114,9 +114,6 @@ function initSidebar() {
   sidebar.id = 'wc-mod-sidebar';
   sidebar.innerHTML = `
     <div class="wc-header" id="wc-sidebar-header" style="display: flex; align-items: center; gap: 6px;">
-      <img src="${chrome.runtime.getURL('images/winged-canvas-nerd-glasses.png')}" alt="Icon" style="height: 20px; object-fit: contain; pointer-events: none;">
-      <span id="wc-drag-title">Mod Helper v4.8</span>
-      <button class="wc-toggle-btn" id="wc-toggle-minimize" style="margin-left: auto;">−</button>
     </div>
     
     <!-- ⚙️ Moderator Profile & Stream Config Section -->
@@ -171,6 +168,28 @@ function initSidebar() {
       </div>
     </div>
   `;
+  document.body.appendChild(sidebar);
+
+  const header = sidebar.querySelector('#wc-sidebar-header');
+
+  const icon = document.createElement('img');
+  icon.src = chrome.runtime.getURL('images/winged-canvas-nerd-glasses.png');
+  icon.alt = 'Icon';
+  icon.style.cssText =
+    'height: 20px; object-fit: contain; pointer-events: none;';
+
+  const title = document.createElement('span');
+  title.id = 'wc-drag-title';
+  title.textContent = 'Mod Helper v4.8';
+
+  const minimizeBtn = document.createElement('button');
+  minimizeBtn.className = 'wc-toggle-btn';
+  minimizeBtn.id = 'wc-toggle-minimize';
+  minimizeBtn.style.marginLeft = 'auto';
+  minimizeBtn.textContent = '−';
+
+  header.append(icon, title, minimizeBtn);
+
   document.body.appendChild(sidebar);
 
   const toggleBtn = document.getElementById('wc-toggle-minimize');

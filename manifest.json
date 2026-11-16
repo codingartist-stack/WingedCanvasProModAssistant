@@ -33,10 +33,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [
-        "images/hero-canvas-reflect.png",
-        "images/winged-canvas-nerd-glasses.png"
-      ],
+      "resources": ["images/*"],
       "matches": ["https://www.youtube.com/*"]
     }
   ]
