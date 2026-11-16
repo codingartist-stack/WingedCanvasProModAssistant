@@ -41,12 +41,12 @@ const COMMANDS = {
     '!welcome',
     '!polls',
     '!chatrules',
+    '!liveschedule',
+    '!socials',
     '!discord',
     '!challenge',
     '!critique',
     '!skool',
-    '!socials',
-    '!liveschedule',
     '!bye',
   ],
   resources: [
@@ -94,6 +94,16 @@ const HYPE_MACROS = {
     '⚠️ Art Nerds, hold fast! Our tech tools are throwing a drawing error. The stream canvas is loading, please hold! 🤖🎨',
   '🎯 Feedback Prompt':
     '🎯 If you could get instant feedback from STREAMER on your art right now, what element would you ask about? Drop it in chat! ✏️💬',
+  '🖌️ Tool Check':
+    "🖌️ STREAMER is working with MEDIUM today! What's your weapon of choice right now—digital tablet or traditional sketchbook? ✏️💻",
+  '🚧 WIP Check-In':
+    '🚧 Mid-stream check-in! Where are you at with your current piece—rough sketching, line art, or rendering? Drop your status below! 👇🎨',
+  '🌟 Art Inspo':
+    "🌟 While STREAMER works on DEMO, let's hear it: Who is your biggest art inspiration or favorite artist right now? Drop their name in chat! ✨👀",
+  '🎧 Vibe Check':
+    '🎧 Drawing soundtrack check! What song, playlist, or background show do you have on repeat while sketching today? 🎶✏️',
+  '📈 Goal Check':
+    '📈 Setting intentions! What is one art goal or skill like SKILL that you want to level up by the end of this month? 🚀🎨',
 };
 
 const BACKUP_SESSION_START = Date.now();
@@ -270,7 +280,7 @@ function switchTab(category, tabId) {
   const cmdTitle = document.createElement('div');
   cmdTitle.style.fontWeight = 'bold';
   cmdTitle.style.marginBottom = '4px';
-  cmdTitle.innerText = '🤖 Bot Triggers';
+  cmdTitle.innerText = '🤖 NightBot Triggers';
   container.appendChild(cmdTitle);
 
   const cmdGrid = document.createElement('div');
