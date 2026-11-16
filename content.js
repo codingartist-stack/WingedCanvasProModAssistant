@@ -259,6 +259,9 @@ function initSidebar() {
     .getElementById('tab-gen')
     .addEventListener('click', () => switchTab('general', 'tab-gen'));
   document
+    .getElementById('tab-hype')
+    .addEventListener('click', () => switchTab('hype', 'tab-hype'));
+  document
     .getElementById('tab-inst')
     .addEventListener('click', () => switchTab('resources', 'tab-inst'));
   document
@@ -301,25 +304,62 @@ function switchTab(category, tabId) {
   const container = document.getElementById('wc-command-container');
   container.innerHTML = '';
 
+  // Render dedicated Hype Tab
+  if (category === 'hype') {
+    const hypeTitle = document.createElement('div');
+    hypeTitle.style.fontWeight = 'bold';
+    hypeTitle.style.marginBottom = '4px';
+    hypeTitle.innerText = '🎉 Community Hype Templates';
+    container.appendChild(hypeTitle);
+
+    const hypeSubtitle = document.createElement('div');
+    hypeSubtitle.style.color = '#aaa';
+    hypeSubtitle.style.fontSize = '11px';
+    hypeSubtitle.style.marginBottom = '6px';
+    hypeSubtitle.innerText =
+      'Edit any remaining words in ALL CAPS before sending';
+    container.appendChild(hypeSubtitle);
+
+    const hypeGrid = document.createElement('div');
+    hypeGrid.className = 'wc-btn-grid';
+    for (const [label, textValue] of Object.entries(HYPE_MACROS)) {
+      const btn = document.createElement('button');
+      btn.className = 'wc-macro-btn';
+      btn.innerText = label;
+      btn.title = formatMacroText(textValue);
+      btn.addEventListener('click', () => sendToChatInput(textValue));
+      hypeGrid.appendChild(btn);
+    }
+    container.appendChild(hypeGrid);
+    return;
+  }
+
+  // Render NightBot Triggers for General, Resources, and Programs
   const cmdTitle = document.createElement('div');
   cmdTitle.style.fontWeight = 'bold';
   cmdTitle.style.marginBottom = '4px';
   cmdTitle.innerText = '🤖 NightBot Triggers';
   container.appendChild(cmdTitle);
 
+  if (category === 'general') {
+    const cmdSubtitle = document.createElement('div');
+    cmdSubtitle.style.color = '#aaa';
+    cmdSubtitle.style.fontSize = '11px';
+    cmdSubtitle.style.marginBottom = '6px';
+    cmdSubtitle.innerText = 'Please use these on each stream';
+    container.appendChild(cmdSubtitle);
+  }
+
   const cmdGrid = document.createElement('div');
   cmdGrid.className = 'wc-btn-grid';
 
-  // Read mod name profile preference dynamically
   const activeModName = localStorage.getItem('wc_mod_profile_name') || '';
 
   COMMANDS[category].forEach((cmd) => {
     const btn = document.createElement('button');
     btn.className = 'wc-macro-btn';
 
-    // Custom replacement: If rendering the baseline !skool trigger, swap name suffix label visually
     if (cmd === '!skool') {
-      // If activeModName exists, append it; otherwise, use the clean default '!skool'
       const dynamicTrigger =
         activeModName && activeModName !== ''
           ? `!skool${activeModName}`
@@ -334,28 +374,8 @@ function switchTab(category, tabId) {
     cmdGrid.appendChild(btn);
   });
   container.appendChild(cmdGrid);
-
-  if (category === 'general') {
-    const hypeTitle = document.createElement('div');
-    hypeTitle.style.fontWeight = 'bold';
-    hypeTitle.style.marginTop = '10px';
-    hypeTitle.style.marginBottom = '4px';
-    hypeTitle.innerText = '🎉 Community Hype Templates';
-    container.appendChild(hypeTitle);
-
-    const hypeGrid = document.createElement('div');
-    hypeGrid.className = 'wc-btn-grid';
-    for (const [label, textValue] of Object.entries(HYPE_MACROS)) {
-      const btn = document.createElement('button');
-      btn.className = 'wc-macro-btn';
-      btn.innerText = label;
-      btn.title = textValue;
-      btn.addEventListener('click', () => sendToChatInput(textValue));
-      hypeGrid.appendChild(btn);
-    }
-    container.appendChild(hypeGrid);
-  }
 }
+
 function makeSidebarDraggable(elmnt, header) {
   let pos1 = 0,
     pos2 = 0,
