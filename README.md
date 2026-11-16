@@ -1,11 +1,10 @@
 # WingedCanvasProModAssistant
-The Winged Canvas Pro Mod Assistant is a draggable sidebar overlay built for live stream moderation and engagement. Manage broadcast metrics, deploy chat macros, track live question backlogs, log time-coded notes, and automate safety shielding instantly from one screen; without cycling through endless browser tabs or disrupting your view.
 
+The Winged Canvas Pro Mod Assistant is a draggable sidebar overlay built for live stream moderation and engagement. Manage broadcast metrics, deploy chat macros, track live question backlogs, log time-coded notes, and automate safety shielding instantly from one screen; without cycling through endless browser tabs or disrupting your view.
 
 Streamline live stream moderation, coordinate viewer engagement, and manage broadcast metrics instantly from a single sidebar dashboard.
 
 Built specifically for high-efficiency community management teams, the Winged Canvas Pro Mod Assistant introduces a powerful, draggable supervisor interface layered directly onto your streaming environment. Stop cycling through infinite browser tabs; deploy chat macros, track live question backlogs, log time-coded stream notes, and handle automated safety moderation instantly.
-
 
 Key Features
 
@@ -15,3 +14,10 @@ Key Features
 • Dynamic Icebreaker Shuffler: Instantly shuffle and review high-engagement conversational prompts and community check-in macros to maintain a lively, positive stream pace during chat transitions.
 • Live Question Queue Tracker: Intercept audience submissions safely. Tag items in the feed to capture them into a structural backlog workspace, rendering copy-ready paste strings to pass clean questions to your instructors seamlessly.
 • Automated Safety Shielding: Real-time DOM element observation tracking automatically highlights and filters target violation phrases while inserting fast UI shortcuts to handle immediate warning escalations.
+
+GitHub Release Notes / Changelog (v4.8)
+
+• Dedicated Chat Hype Tab: Separated community engagement templates into their own Hype tab for faster, zero-scroll access during live broadcasts.
+• Smart Streamer & Topic Auto-Fill: Added persistent Streamer and Topic inputs in the configuration panel that automatically populate STREAMER and TOPIC placeholders across all Hype templates.
+• Dynamic Instructor Gear Command (!device): Added a smart !device trigger in the Resources tab that dynamically appends the active streamer's name (e.g., !devicefei), mirroring the personalized !skool affiliate pipeline.
+• Built-In Mod Guardrails: Added subtle on-screen reminders under General triggers ("Please use these on each stream") and Hype templates ("Edit any remaining words in ALL CAPS before sending") to streamline onboarding for new moderators.
