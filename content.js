@@ -127,7 +127,7 @@ function initSidebar() {
         </div>
         <div class="wc-config-row">
           <span style="font-size:11px; color:#aaa; width: 58px;">Streamer:</span>
-          <input type="text" id="wc-input-streamer" class="wc-config-input" placeholder="e.g. Fei, Adam">
+          <input type="text" id="wc-input-streamer" class="wc-config-input" placeholder="e.g. Fei, Josh, Seth">
         </div>
         <div class="wc-config-row" style="margin-bottom: 0;">
           <span style="font-size:11px; color:#aaa; width: 58px;">Topic:</span>
