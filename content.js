@@ -316,7 +316,7 @@ function switchTab(category, tabId) {
     hypeTitle.style.fontWeight = 'bold';
     hypeTitle.style.marginTop = '10px';
     hypeTitle.style.marginBottom = '4px';
-    hypeTitle.innerText = '🎉 Community Hype Text';
+    hypeTitle.innerText = '🎉 Community Hype Templates';
     container.appendChild(hypeTitle);
 
     const hypeGrid = document.createElement('div');
