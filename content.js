@@ -65,7 +65,7 @@ const HYPE_MACROS = {
   '👋 Welcome Hype':
     "🎨 Welcome to the stream! Grab your sketchbook, ask questions, and tell us what you're working on today! 🤓✨",
   '✨ Joining Late?':
-    "✨ Joining late? Today's focus is TOPIC! STREAMER is currently demoing DEMO. Say hi in chat 🔥🎨",
+    "✨ Joining late? Today's focus is TOPIC! STREAMER is currently demoing SKILL. Say hi in chat 🔥🎨",
   '🙌 Team Hype':
     '💖 Huge shoutout to STREAMER for breaking down TOPIC and to our mod team keeping chat running smoothly! Drop some hearts in chat! 🎨✨',
   '💬 Topic Struggles':
@@ -83,7 +83,7 @@ const HYPE_MACROS = {
   '🚧 WIP Check-In':
     '🚧 Mid-stream check-in! Where are you at with your current piece—rough sketching, line art, or rendering? Drop your status below! 👇🎨',
   '🌟 Art Inspo':
-    "🌟 While STREAMER works on DEMO, let's hear it: Who is your biggest art inspiration or favorite artist right now? Drop their name in chat! ✨👀",
+    "🌟 While STREAMER works on SKILL, let's hear it: Who is your biggest art inspiration or favorite artist right now? Drop their name in chat! ✨👀",
   '🎧 Vibe Check':
     '🎧 Drawing soundtrack check! What song, playlist, or background show do you have on repeat while sketching today? 🎶✏️',
   '📈 Goal Check':
